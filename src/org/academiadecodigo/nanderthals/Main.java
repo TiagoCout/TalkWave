@@ -1,7 +1,15 @@
 package org.academiadecodigo.nanderthals;
 
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("First line of TalkWave");
+        Server server = new Server();
+
+        try {
+            server.start();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
